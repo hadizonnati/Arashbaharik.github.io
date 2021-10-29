@@ -334,6 +334,9 @@ img.eqwl {
 	padding-bottom: 0.2em;
 	margin: 0;
 }
+imgtable.img{
+	border-radius:50px;
+}
 
 table {
     border: 2px solid black;
