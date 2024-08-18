@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
@@ -12,6 +13,16 @@
     src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= 200) {    // offset?
+               $(".left-menu-section").addClass("fixed");
+            } else { 
+                $(".left-menu-section").removeClass("fixed");
+            }
+        });
+    </script>
 
 
     <style>
