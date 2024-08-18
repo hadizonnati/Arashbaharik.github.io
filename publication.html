@@ -1,121 +1,630 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<link rel="icon" href="ara.png" type="image/x-icon" />
-  <title>Publication</title>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="jemdoc.css" type="text/css" />
+    <link rel="icon" href="ara.png" type="image/x-icon" />
+    <title>Publication</title>
+
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= 200) {    // offset?
+               $(".left-menu-section").addClass("fixed");
+            } else { 
+                $(".left-menu-section").removeClass("fixed");
+            }
+        });
+    </script>
+
+
+    <style>
+        .profile-img{
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+        }
+        .left-menu-section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; 
+        }
+        div.menu-item{
+            width: 100%;
+        }
+        
+        .left-menu-section div a{
+            width: 100%;
+                padding: 9px;
+                background-color: #fff;
+                border-radius: 11px;
+                line-height: 2;
+                text-align: center;
+                margin-bottom: 10px;
+                display: inline-block;
+        }
+        #layout-menu{
+            min-width: 15%;
+        }
+        .fixed{
+            position: fixed;
+            left: 30px;
+            top:30px;
+            left: 35px;
+        }
+        table#tlayout {
+            border: none;
+            border-collapse: separate;
+            background: white;
+        }
+
+        body {
+            background: white;
+            font-family: Georgia, serif;
+            padding-bottom: 8px;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        #layout-menu {
+            position: -webkit-sticky;
+            /*-webkit-sticky; /* For Safari */
+            position: sticky;
+            */ top: 0;
+            /* Stick to the top of the viewport */
+            z-index: 1000;
+            /* Ensures the menu stays above other content */
+            background: #FFFFE0;
+            border: 1px solid #dddddd;
+            padding-top: 0.5em;
+            padding-left: 8px;
+            padding-right: 8px;
+            font-size: 1.0em;
+            width: auto;
+            white-space: nowrap;
+            text-align: left;
+            vertical-align: top;
+        }
+
+
+
+        #layout-menu td {
+            background: #f4f4f4;
+            vertical-align: top;
+        }
+
+        #layout-content {
+            /* padding-top: 0.0em; */
+            /* padding-left: 1.0em; */
+            /* padding-right: 1.0em; */
+            /* border: none; */
+            /* background: white; */
+            /* text-align: left; */
+            /* vertical-align: top; */
+        }
+
+        #layout-menu a {
+            line-height: 1.5em;
+        }
+
+        tt {
+            background: #ffffdd;
+        }
+
+        pre,
+        tt {
+            font-size: 90%;
+            font-family: monaco, monospace;
+        }
+
+        a,
+        a>tt {
+            color: #224b8d;
+            text-decoration: none;
+        }
+
+        a:hover {
+            border-bottom: 1px gray dotted;
+        }
+
+        #layout-menu a.current:link,
+        #layout-menu a.current:visited {
+            color: #022b6d;
+            border-bottom: 1px gray solid;
+        }
+
+        #layout-menu a:link,
+        #layout-menu a:visited,
+        #layout-menu a:hover {
+            color: #800080;
+            text-decoration: none;
+        }
+
+        #layout-menu a:hover {
+            text-decoration: none;
+        }
+
+        div.menu-category {
+            border-bottom: 1px solid gray;
+            margin-top: 0.8em;
+            padding-top: 0.2em;
+            padding-bottom: 0.1em;
+            font-weight: bold;
+            text-decoration: none !important;
+            margin-bottom: 1rem !important;
+        }
+
+        div.menu-item {
+            padding-left: 16px;
+            text-indent: -16px;
+        }
+
+        div#toptitle {
+            padding-bottom: 0.2em;
+            margin-bottom: 1.5em;
+            border-bottom: 3px double gray;
+        }
+
+        /* Reduce space if we begin the page with a title. */
+        div#toptitle+h2,
+        div#toptitle+h3 {
+            margin-top: -0.7em;
+        }
+
+        div#subtitle {
+            margin-top: 0.0em;
+            margin-bottom: 0.0em;
+            padding-top: 0em;
+            padding-bottom: 0.1em;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            color: #800080;
+            margin-top: 0.7em;
+            margin-bottom: 0.3em;
+            padding-bottom: 0.2em;
+            line-height: 1.0;
+            padding-top: 0.5em;
+            border-bottom: 1px solid #aaaaaa;
+        }
+
+        h1 {
+            font-size: 165%;
+        }
+
+        h2 {
+            padding-top: 0.8em;
+            font-size: 125%;
+        }
+
+        h2+h3 {
+            padding-top: 0.2em;
+        }
+
+        h3 {
+            font-size: 110%;
+            border-bottom: none;
+        }
+
+        p {
+            margin-top: 0.0em;
+            margin-bottom: 0.8em;
+            padding: 0;
+            line-height: 1.3;
+        }
+
+        pre {
+            padding: 0;
+            margin: 0;
+        }
+
+        div#footer {
+            font-size: small;
+            border-top: 1px solid #c0c0c0;
+            padding-top: 0.1em;
+            margin-top: 4.0em;
+            color: #c0c0c0;
+        }
+
+        div#footer a {
+            color: #80a0b0;
+        }
+
+        div#footer-text {
+            float: left;
+            padding-bottom: 8px;
+        }
+
+        ul,
+        ol,
+        dl {
+            margin-top: 0.2em;
+            padding-top: 0;
+            margin-bottom: 0.8em;
+        }
+
+        dt {
+            margin-top: 0.5em;
+            margin-bottom: 0;
+        }
+
+        dl {
+            margin-left: 20px;
+        }
+
+        dd {
+            color: #222222;
+        }
+
+        dd>*:first-child {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-position: outside;
+            list-style-type: square;
+        }
+
+        p+ul,
+        p+ol {
+            margin-top: -0.5em;
+        }
+
+        li ul,
+        li ol {
+            margin-top: -0.3em;
+        }
+
+        ol {
+            list-style-position: outside;
+            list-style-type: decimal;
+        }
+
+        li p,
+        dd p {
+            margin-bottom: 0.3em;
+        }
+
+
+        ol ol {
+            list-style-type: lower-alpha;
+        }
+
+        ol ol ol {
+            list-style-type: lower-roman;
+        }
+
+        p+div.codeblock {
+            margin-top: -0.6em;
+        }
+
+        div.codeblock,
+        div.infoblock {
+            margin-right: 0%;
+            margin-top: 1.2em;
+            margin-bottom: 1.3em;
+        }
+
+        div.blocktitle {
+            font-weight: bold;
+            color: #cd7b62;
+            margin-top: 1.2em;
+            margin-bottom: 0.1em;
+        }
+
+        div.blockcontent {
+            border: 1px solid silver;
+            padding: 0.3em 0.5em;
+        }
+
+        div.infoblock>div.blockcontent {
+            background: #ffffee;
+        }
+
+        div.blockcontent p+ul,
+        div.blockcontent p+ol {
+            margin-top: 0.4em;
+        }
+
+        div.infoblock p {
+            margin-bottom: 0em;
+        }
+
+        div.infoblock li p,
+        div.infoblock dd p {
+            margin-bottom: 0.5em;
+        }
+
+        div.infoblock p+p {
+            margin-top: 0.8em;
+        }
+
+        div.codeblock>div.blockcontent {
+            background: #f6f6f6;
+        }
+
+        span.pycommand {
+            color: #000070;
+        }
+
+        span.statement {
+            color: #008800;
+        }
+
+        span.builtin {
+            color: #000088;
+        }
+
+        span.special {
+            color: #990000;
+        }
+
+        span.operator {
+            color: #880000;
+        }
+
+        span.error {
+            color: #aa0000;
+        }
+
+        span.comment,
+        span.comment>*,
+        span.string,
+        span.string>* {
+            color: #606060;
+        }
+
+        @media print {
+            #layout-menu {
+                display: none;
+            }
+        }
+
+        #fwtitle {
+            margin: 2px;
+        }
+
+        #fwtitle #toptitle {
+            padding-left: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        #layout-content h1:first-child,
+        #layout-content h2:first-child,
+        #layout-content h3:first-child {
+            margin-top: -0.7em;
+        }
+
+        div#toptitle h1,
+        #layout-content div#toptitle h1 {
+            margin-bottom: 0.0em;
+            padding-bottom: 0.1em;
+            padding-top: 0;
+            margin-top: 0.5em;
+            border-bottom: none;
+        }
+
+        img.eq {
+            padding: 0;
+            padding-left: 0.1em;
+            padding-right: 0.1em;
+            margin: 0;
+        }
+
+        img.eqwl {
+            padding-left: 2em;
+            padding-top: 0.6em;
+            padding-bottom: 0.2em;
+            margin: 0;
+        }
+
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 2px;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            text-align: center;
+            border: 1px solid gray;
+        }
+
+        table+table {
+            margin-top: 1em;
+        }
+
+        tr.heading {
+            font-weight: bold;
+            border-bottom: 2px solid black;
+        }
+
+        img {
+            border: none;
+        }
+
+        table.imgtable,
+        table.imgtable td {
+            border: none;
+            text-align: left;
+        }
+    </style>
+
+
 </head>
+
 <body>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">Arash Bahari Kordabad</div>
-<div class="menu-item"><a href="index.html">Home</a></div>
-<div class="menu-item"><a href="publication.html" class="current">Publication</a></div>
-  <div class="menu-item"><a href="miscellaneous.html">Miscellaneous</a></div>
+    <table summary="Table for page layout." id="tlayout">
+        <tr valign="top">
+            <div id="layout-menu">
+                <div  class="left-menu-section">
+                    <img src="https://arashbaharik.github.io/ara.png" class="profile-img" alt="">
+                    <div class="menu-category">Arash Bahari Kordabad</div>
+                    <div class="menu-item"><a href="index.html">Home</a></div>
+                    <div class="menu-item"><a href="publication.html" class="current">Publication</a></div>
+                    <div class="menu-item"><a href="miscellaneous.html">Miscellaneous</a></div>
+                    <div class="menu-item"><a href="research.html">Research</a></div>
+                    <div class="menu-item"><a href="slides.html">Slides</a></div>
+                    <div class="menu-item"><a href="photos.html">Photos</a></div>
+                </div>
+            </div>
+            <div id="layout-content">
+                <div id="toptitle">
+                    <h1>Publication</h1>
+                </div>
+                <h2>2021</h2>
+                <ul>
+                    <li>
+                        <p>
+                            [C9] W.Cai, H. Nejatbakhsh Esfahani, <b>A. Bahari Kordabad</b>, and S. Gros, <a
+                                href="https://arxiv.org/abs/2108.01459">"Optimal Management of the Peak Power Penalty
+                                for Smart Grids Using MPC-based Reinforcement Learning"</a>, <i>60th Conference on
+                                Decision and Control (CDC)</i>, 2021.
+                            [<a href="https://arxiv.org/pdf/2108.01459.pdf">PDF</a>]
+                        </p>
+                    </li>
+                </ul>
 
-</td>
-<td id="layout-content">
-<div id="toptitle">
-<h1>Publication</h1>
-</div>
-<h2>2021</h2>
-<ul>
-<li><p>    
-[C9] W.Cai, H. Nejatbakhsh Esfahani, <b>A. Bahari Kordabad</b>, and S. Gros, <a href="https://arxiv.org/abs/2108.01459">"Optimal Management of the Peak Power Penalty for Smart Grids Using MPC-based Reinforcement Learning"</a>, <i>60th Conference on Decision and Control (CDC)</i>, 2021.
- [<a href="https://arxiv.org/pdf/2108.01459.pdf">PDF</a>]
-</p>
-</li>
-</ul>
+                <ul>
+                    <li>
+                        <p>
+                            [C8] W. Cai, <b>A. Bahari Kordabad</b>, H. Nejatbakhsh Esfahani, A. M. Lekkas, and S. Gros,
+                            <a href="https://arxiv.org/abs/2106.08634">"MPC-based Reinforcement Learning for a
+                                Simplified Freight Mission of Autonomous Surface Vehicles"</a>, <i>60th Conference on
+                                Decision and Control (CDC)</i>, 2021.
+                            [<a href="https://arxiv.org/pdf/2106.08634.pdf">PDF</a>]
+                        </p>
+                    </li>
+                </ul>
 
-  <ul>
-<li><p>
-[C8] W. Cai, <b>A. Bahari Kordabad</b>, H. Nejatbakhsh Esfahani, A. M. Lekkas, and S. Gros, <a href="https://arxiv.org/abs/2106.08634">"MPC-based Reinforcement Learning for a Simplified Freight Mission of Autonomous Surface Vehicles"</a>, <i>60th Conference on Decision and Control (CDC)</i>, 2021. 
-  [<a href="https://arxiv.org/pdf/2106.08634.pdf">PDF</a>] 
-  </p>
-</li>
-</ul>
-  
-  <ul>
-  <li><p>
-[C7] <b>A. Bahari Kordabad</b>, W. Cai, and S. Gros, <a href="https://arxiv.org/abs/2106.03541">"Multi-agent Battery Storage Management using MPC-based Reinforcement Learning"</a>, <i>IEEE Conference on Control Technology and Applications (CCTA)</i>, 2021.
-   [<a href="https://arxiv.org/pdf/2106.03541.pdf">PDF</a>]
-  </p>
-</li>
-</ul>
- 
-  <ul>
-    <li><p>
-[C6] <b>A. Bahari Kordabad</b>, and S. Gros, <a href="https://doi.org/10.1016/j.ifacol.2021.08.562">"Verification of Dissipativity and Evaluation of Storage Function in Economic Nonlinear MPC using Q-Learning"</a>, <i>7th IFAC Conference on NonlinearModel Predictive Control</i>, 2021.  
-     [<a href="https://arxiv.org/pdf/2105.11313.pdf">PDF</a>]
-  </p>
-</li>
-</ul>
- 
-  <ul>
-      <li><p>
-[C5] H. Nejatbakhsh Esfahani, <b>A. Bahari Kordabad</b>, and S. Gros, <a href="https://arxiv.org/abs/2104.02743">"Approximate Robust NMPC using Reinforcement Learning"</a>, <i>European Control Conference (ECC)</i>, 2021.
-   [<a href="https://arxiv.org/pdf/2104.02743.pdf">PDF</a>]
-  </p>
-</li>
-</ul>
-  
-  <ul>
-        <li><p>
-[C4] <b>A. Bahari Kordabad</b>, H. Nejatbakhsh Esfahani, and S. Gros, <a href="https://arxiv.org/abs/2104.02413">"Bias Correction in Deterministic Policy Gradient Using Robust MPC"</a>, <i>European Control Conference (ECC)</i>, 2021.
-   [<a href="https://arxiv.org/pdf/2104.02413.pdf">PDF</a>] 
-  </p>
-</li>
-</ul>
-  
-  <ul>
-        <li><p>
-[C3] <b>A. Bahari Kordabad</b>, W. Cai, and S. Gros, <a href="https://arxiv.org/abs/2104.02411">"MPC-based reinforcement learning for economic problems with application to battery storage"</a>, <i>European Control Conference (ECC)</i>, 2021.
-        [<a href="https://arxiv.org/pdf/2104.02411.pdf">PDF</a>]
+                <ul>
+                    <li>
+                        <p>
+                            [C7] <b>A. Bahari Kordabad</b>, W. Cai, and S. Gros, <a
+                                href="https://arxiv.org/abs/2106.03541">"Multi-agent Battery Storage Management using
+                                MPC-based Reinforcement Learning"</a>, <i>IEEE Conference on Control Technology and
+                                Applications (CCTA)</i>, 2021.
+                            [<a href="https://arxiv.org/pdf/2106.03541.pdf">PDF</a>]
+                        </p>
+                    </li>
+                </ul>
 
-  </p>
-</li>
-</ul>
-  
-  <ul>
-        <li><p>
- 
-[C2] H. Nejatbakhsh Esfahani, <b>A. Bahari Kordabad</b>, and S. Gros, <a href="https://ieeexplore.ieee.org/document/9483399">"Reinforcement learning basedon  MPC/MHE  for  unmodeled  and  partially  observable  dynamics"</a>, <i>American Control Conference (ACC)</i>, 2021.
-          [<a href="https://arxiv.org/pdf/2103.11871.pdf">PDF</a>]
-  
-  </p>
-</li>
-</ul>
-  
-  <ul>
-         <li><p>
- 
-[C1]<b> A. Bahari Kordabad</b>, H. Nejatbakhsh Esfahani, A. M. Lekkas, and S. Gros,<a href="https://ieeexplore.ieee.org/document/9483100">"Reinforcement learning based on scenario-tree MPC for ASVs"</a>, <i>American Control Conference (ACC)</i>, 2021.
-           [<a href="https://arxiv.org/pdf/2103.11949.pdf">PDF</a>]
-  
-  </p>
-</li>
-</ul>
+                <ul>
+                    <li>
+                        <p>
+                            [C6] <b>A. Bahari Kordabad</b>, and S. Gros, <a
+                                href="https://doi.org/10.1016/j.ifacol.2021.08.562">"Verification of Dissipativity and
+                                Evaluation of Storage Function in Economic Nonlinear MPC using Q-Learning"</a>, <i>7th
+                                IFAC Conference on NonlinearModel Predictive Control</i>, 2021.
+                            [<a href="https://arxiv.org/pdf/2105.11313.pdf">PDF</a>]
+                        </p>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <p>
+                            [C5] H. Nejatbakhsh Esfahani, <b>A. Bahari Kordabad</b>, and S. Gros, <a
+                                href="https://arxiv.org/abs/2104.02743">"Approximate Robust NMPC using Reinforcement
+                                Learning"</a>, <i>European Control Conference (ECC)</i>, 2021.
+                            [<a href="https://arxiv.org/pdf/2104.02743.pdf">PDF</a>]
+                        </p>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <p>
+                            [C4] <b>A. Bahari Kordabad</b>, H. Nejatbakhsh Esfahani, and S. Gros, <a
+                                href="https://arxiv.org/abs/2104.02413">"Bias Correction in Deterministic Policy
+                                Gradient Using Robust MPC"</a>, <i>European Control Conference (ECC)</i>, 2021.
+                            [<a href="https://arxiv.org/pdf/2104.02413.pdf">PDF</a>]
+                        </p>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <p>
+                            [C3] <b>A. Bahari Kordabad</b>, W. Cai, and S. Gros, <a
+                                href="https://arxiv.org/abs/2104.02411">"MPC-based reinforcement learning for economic
+                                problems with application to battery storage"</a>, <i>European Control Conference
+                                (ECC)</i>, 2021.
+                            [<a href="https://arxiv.org/pdf/2104.02411.pdf">PDF</a>]
+
+                        </p>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <p>
+
+                            [C2] H. Nejatbakhsh Esfahani, <b>A. Bahari Kordabad</b>, and S. Gros, <a
+                                href="https://ieeexplore.ieee.org/document/9483399">"Reinforcement learning basedon
+                                MPC/MHE for unmodeled and partially observable dynamics"</a>, <i>American Control
+                                Conference (ACC)</i>, 2021.
+                            [<a href="https://arxiv.org/pdf/2103.11871.pdf">PDF</a>]
+
+                        </p>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <p>
+
+                            [C1]<b> A. Bahari Kordabad</b>, H. Nejatbakhsh Esfahani, A. M. Lekkas, and S. Gros,<a
+                                href="https://ieeexplore.ieee.org/document/9483100">"Reinforcement learning based on
+                                scenario-tree MPC for ASVs"</a>, <i>American Control Conference (ACC)</i>, 2021.
+                            [<a href="https://arxiv.org/pdf/2103.11949.pdf">PDF</a>]
+
+                        </p>
+                    </li>
+                </ul>
 
 
-<h2>2020</h2>
-<ul>
-<li><p>
-  
-[J1]<b> A. Bahari Kordabad</b>, and M. Boroushaki, <a href="https://jacm.scu.ac.ir/article_14664_0.html">"Emotional Learning Based Intelligent Controller for MIMO Peripheral Milling Process"</a>. <i>Journal of Applied and Computational Mechanics</i>, 6(3), 480-492, 2020.
-   [<a href="https://jacm.scu.ac.ir/article_14664_ea890919d7e100969689ea5539724004.pdf">PDF</a>]
-</li>
-</ul>
-<div id="footer">
-<div id="footer-text">
-Last Update 2021-10-27.
-</div>
-</div>
-</td>
-</tr>
-</table>
+                <h2>2020</h2>
+                <ul>
+                    <li>
+                        <p>
+
+                            [J1]<b> A. Bahari Kordabad</b>, and M. Boroushaki, <a
+                                href="https://jacm.scu.ac.ir/article_14664_0.html">"Emotional Learning Based Intelligent
+                                Controller for MIMO Peripheral Milling Process"</a>. <i>Journal of Applied and
+                                Computational Mechanics</i>, 6(3), 480-492, 2020.
+                            [<a
+                                href="https://jacm.scu.ac.ir/article_14664_ea890919d7e100969689ea5539724004.pdf">PDF</a>]
+                    </li>
+                </ul>
+                <div id="footer">
+                    <div id="footer-text">
+                        Last Update 2021-10-27.
+                    </div>
+                </div>
+            </div>
+        </tr>
+    </table>
 </body>
+
 </html>
